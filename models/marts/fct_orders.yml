@@ -1,16 +1,12 @@
 models:
-  - name: fct_order_items
-    access: public
+  - name: fct_orders
     group: finance
+    access: public
     config:
       contract:
         enforced: true
     columns:
-      - name: order_item_id
-        data_type: varchar
       - name: order_id
-        data_type: varchar
-      - name: product_id
         data_type: varchar
       - name: location_id
         data_type: varchar
@@ -30,4 +26,10 @@ models:
         data_type: number
       - name: location_opened_at
         data_type: timestamp_ntz
+      - name: ordered_month
+        data_type: number
+      - name: ordered_day
+        data_type: number
+      - name: ordered_year
+        data_type: number
     

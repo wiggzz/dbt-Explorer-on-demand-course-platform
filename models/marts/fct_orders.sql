@@ -2,18 +2,23 @@ with orders as (
     select * from {{ ref('int_orders') }}
 ),
 
-order_items as (
-    select * from {{ ref('stg_order_items') }}
-),
-
-joined as (
+final as (
     select 
-        order_items.*,
-        orders.* exclude (order_id)
-        
-    from orders 
-        inner join order_items 
-            on orders.order_id = order_items.order_id
+        order_id,
+        location_id,
+        customer_id,
+        order_total,
+        tax_paid,
+        ordered_at,
+        customer_name,
+        location_name,
+        tax_rate,
+        location_opened_at,
+        date_part(month, ordered_at) as ordered_month,
+        date_part(day, ordered_at) as ordered_day, 
+        date_part(year, ordered_at) as ordered_year
+    from orders
 )
 
-select * from joined
+select * 
+from final
