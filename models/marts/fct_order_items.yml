@@ -39,4 +39,3 @@ models:
         data_type: number
       - name: location_opened_at
         data_type: timestamp_ntz
-    

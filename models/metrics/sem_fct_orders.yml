@@ -125,3 +125,4 @@ metrics:
     type_params:
       measure: order_total
       grain_to_date: month
+      
