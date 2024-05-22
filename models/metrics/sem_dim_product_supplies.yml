@@ -1,6 +1,5 @@
 semantic_models:
   - name: dim_product_supplies
-    defaults:
     model: ref('dim_product_supplies')
     entities:
       - name: product_id
