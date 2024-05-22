@@ -9,8 +9,12 @@ models:
     columns:
       - name: order_id
         data_type: varchar
+        constraints:
+          - type: not_null
       - name: location_id
         data_type: varchar
+        constraints:
+          - type: not_null
       - name: customer_id
         data_type: varchar
       - name: order_total
@@ -23,6 +27,11 @@ models:
         data_type: varchar
       - name: location_name
         data_type: varchar
+        tests:
+          - accepted_values:
+              values:
+                - "Brooklyn"
+                - "Philadelphia"
       - name: tax_rate
         data_type: number
       - name: location_opened_at
