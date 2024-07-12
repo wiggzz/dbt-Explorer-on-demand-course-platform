@@ -7,7 +7,7 @@ models:
         enforced: true
     columns:
       - name: product_name
-        data_type: int
+        data_type: varchar
         constraints:
           - type: not_null
         tests:
